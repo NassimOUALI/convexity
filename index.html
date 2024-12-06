@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Convex equation</title>
+	<!-- Include p5.js library -->
+	<style>
+		*{
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+			overflow: hidden;
+		}
+		input.short{
+			width: 100px;
+		}
+		.inputs{
+			display: flex;
+			flex-direction: column;
+		}
+		.input_container{
+			display: flex;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			
+		}
+		.input_container div{
+			padding-right: 20px; 
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+	<div class="inputs">
+		<div class="input_container">
+			<div>
+				<label for="">F(x) = </label>
+				<input type="text" id="eq" value="x*x">
+			</div>
+			<div>
+				<label for="">λ :</label>
+				<input type="range" id="lambda" name="a" min="0" max="1" step="0.01" value="0.5">
+			</div>
+			<div>
+				<!-- <label for="">Φ(x) : </label>
+				<input type="checkbox" name="" id="phi"> -->
+			</div>
+		</div>
+		<div class="input_container">
+			<div>
+				<label for="">a :</label>
+				<input type="range" id="a" name="a" min="-8" max="8" step="0.01" value="-1">
+			</div>
+			<div>
+				<label for="">b :</label>
+				<input type="range" id="b" name="a" min="-8" max="8" step="0.01" value="1">
+			</div>
+			<small>point = ( x , F(x) ) avec x ∈ [-8,8]</small>
+		</div>
+	</div>
+	<div id="canvas-container" ></div>
+    <!-- The canvas will be created inside this div -->
+  </div>
+	
+	<p>
+		So u can see that the blue point is <b>"F( λa + (1-λ)b )"</b> and the second red<br>
+		dot is the one made by <b>"λF(a) + (1-λ)F(b)"</b> and if the function is convex <br>
+		we can observe that, <b>∀a,b∈X, ∀λ∈[0,1] : F(λa+(1−λ)b) ≤ λF(a)+(1−λ)F(b)</b>
+	</p>
+	<!-- Load your sketch.js file -->
+	<script src="main.js"></script>
+
+</body>
+</html>
